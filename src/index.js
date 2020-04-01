@@ -1,5 +1,5 @@
-import store from "store.js";
-
+import store from "./store";
+store.store;
 let addtodotextfield;
 let addtodobutton;
 let todowrapper;
