@@ -1,0 +1,62 @@
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  color: #696969;
+  border-style: ridge;
+  border-radius: 10px;
+  margin: auto;
+  margin-top: 5px;
+  width: 50%;
+  padding: 5px;
+}
+
+header {
+  font-size: 24px;
+  color: #48494b;
+  border-bottom-style: solid;
+  border-bottom-color: lightgray;
+}
+
+.activetodo {
+  text-decoration: none;
+  color: #696969;
+}
+
+.inactivetodo {
+  text-decoration: line-through;
+  color: lightslategrey;
+}
+
+.boxen {
+  padding: 5px;
+}
+
+.deletebutton {
+  height: 20px;
+  width: 16px;
+  background-image: url("/assets/bin.png");
+  float: right;
+}
+
+#todowrapper {
+  line-height: 150%;
+}
+
+#addtodowrapper {
+  border-style: solid;
+  border-color: lightgray;
+  border-width: 2px;
+  display: flex;
+  flex-direction: row;
+}
+
+#addtodofield {
+  flex: 10 1 auto;
+}
+
+#addtodobutton {
+  flex: 1 1 auto;
+}
+
+#attribution {
+  font-size: 10px;
+}
