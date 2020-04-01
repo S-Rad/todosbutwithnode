@@ -14,8 +14,10 @@ const todosslice = createSlice({
         const index = draftstate.findIndex(todo => todo.id === action.id);
         draftstate[index].active = !draftstate[index].active;
       })
-      
+
   }
 });
+
+
 
 export default todosslice;
