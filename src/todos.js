@@ -19,5 +19,4 @@ const todosslice = createSlice({
       })
   }
 });
-console.log(todosslice);
 export default todosslice;

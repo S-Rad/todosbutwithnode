@@ -12,7 +12,6 @@ window.onload = () => {
   todowrapper = document.querySelector("#todowrapper");
   addtodobutton.onclick = addtodolistener;
   initializetodos();
-  console.log(store.getState().todos);
 };
 
 const addtodolistener = () => {
@@ -22,18 +21,8 @@ const addtodolistener = () => {
 };
 
 async function initializetodos() {
-  await loadtodos();
   renderalltodos();
 }
-
-//4 methoden: 1 loeschen, 1 hinzufuegen, toggletodo, ein einzelnes element finden
-const loadtodos = () =>
-  localforage
-    .getItem("todos")
-    .then(jsontodos =>
-      jsontodos ? jsontodos : localforage.setItem("todos", [])
-    )
-    .then(jsontodos => (todos = todos.concat(jsontodos)));
 
 const addtodo = todotext => {
   todos.push({
@@ -45,6 +34,7 @@ const addtodo = todotext => {
 
 const renderalltodos = () => {
   emptytodolist();
+  console.log(store.getState().todos);
   store.getState().todos.forEach(rendertodo);
 };
 
