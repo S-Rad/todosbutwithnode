@@ -13,7 +13,8 @@ const persistedReducer = persistReducer(
 );
 
 const store = configureStore({
-  reducer: persistedReducer
+  reducer: persistedReducer,
+  middleware: []
 });
 
 persistStore(store);

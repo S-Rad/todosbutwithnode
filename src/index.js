@@ -15,9 +15,7 @@ window.onload = () => {
 };
 
 const addtodolistener = () => {
-
-  store.dispatch(actions.add(addtodotextfield.value));
-  //addtodo(addtodotextfield.value);
+  store.dispatch(actions.add({ text: addtodotextfield.value }));
   renderalltodos();
   addtodotextfield.value = null;
 };

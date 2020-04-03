@@ -7,14 +7,17 @@ const todosslice = createSlice({
   initialState: [],
   reducers: {
     add: (state, action) =>
-      state.concat({ id: uuidv4(), text: action.text, active: true }),
-    remove: (state, action) => state.filter(todo => todo.id !== action.id),
+      state.concat({ id: uuidv4(), text: action.payload.text, active: true }),
+    remove: (state, action) =>
+      state.filter(todo => todo.id !== action.payload.id),
     toggle: (state, action) =>
       produce(state, draftstate => {
-        const index = draftstate.findIndex(todo => todo.id === action.id);
+        const index = draftstate.findIndex(
+          todo => todo.id === action.payload.id
+        );
         draftstate[index].active = !draftstate[index].active;
       })
   }
 });
-
+console.log(todosslice);
 export default todosslice;
