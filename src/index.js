@@ -74,10 +74,7 @@ const checkboxclicked = e => {
   renderalltodos();
 };
 
-const toggletodo = id => {
-  const index = todos.findIndex(todo => todo.id === id);
-  todos[index].active = !todos[index].active;
-};
+const toggletodo = todoid => store.dispatch(actions.toggle({ id: todoid }));
 
 const emptytodolist = () => (todowrapper.innerHTML = null);
 
