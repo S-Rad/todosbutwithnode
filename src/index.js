@@ -12,6 +12,7 @@ window.onload = () => {
   todowrapper = document.querySelector("#todowrapper");
   addtodobutton.onclick = addtodolistener;
   initializetodos();
+  console.log(store.getState().todos);
 };
 
 const addtodolistener = () => {
@@ -44,7 +45,7 @@ const addtodo = todotext => {
 
 const renderalltodos = () => {
   emptytodolist();
-  todos.forEach(rendertodo);
+  store.getState().todos.forEach(rendertodo);
 };
 
 const rendertodo = ({ id, text, active }) => {
