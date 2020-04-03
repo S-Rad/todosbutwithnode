@@ -4,7 +4,6 @@ const { actions } = todosslice;
 let addtodotextfield;
 let addtodobutton;
 let todowrapper;
-let todos = [];
 
 window.onload = () => {
   addtodotextfield = document.querySelector("#addtodofield");
@@ -24,18 +23,12 @@ async function initializetodos() {
   renderalltodos();
 }
 
-const addtodo = todotext => {
-  todos.push({
-    id: uuidv4(),
-    text: todotext,
-    active: true
-  });
-};
+const gettodos = () => store.getState().todos;
 
 const renderalltodos = () => {
   emptytodolist();
   console.log(store.getState().todos);
-  store.getState().todos.forEach(rendertodo);
+  gettodos().forEach(rendertodo);
 };
 
 const rendertodo = ({ id, text, active }) => {
@@ -65,10 +58,7 @@ const deletebuttonclicked = e => {
   renderalltodos();
 };
 
-const removetodo = id => {
-  const index = todos.findIndex(todo => todo.id === id);
-  todos.splice(index, 1);
-};
+const removetodo = todoid => store.dispatch(actions.remove({ id: todoid }));
 
 const createcheckbox = active => {
   const todocheckbox = document.createElement("input");
