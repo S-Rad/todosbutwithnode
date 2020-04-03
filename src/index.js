@@ -1,5 +1,6 @@
 import store from "./store";
-store.store;
+import todosslice from "./todos";
+const { actions } = todosslice;
 let addtodotextfield;
 let addtodobutton;
 let todowrapper;
@@ -14,7 +15,9 @@ window.onload = () => {
 };
 
 const addtodolistener = () => {
-  addtodo(addtodotextfield.value);
+
+  store.dispatch(actions.add(addtodotextfield.value));
+  //addtodo(addtodotextfield.value);
   renderalltodos();
   addtodotextfield.value = null;
 };

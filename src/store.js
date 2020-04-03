@@ -17,6 +17,5 @@ const store = configureStore({
 });
 
 persistStore(store);
-console.log(todosslice);
 
 export default store;
